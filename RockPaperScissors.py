@@ -1,6 +1,8 @@
 import random
 
 moves = ['rock', 'paper', 'scissors']
+countp1 = 0
+countp2 = 0
 
 
 class Player:
@@ -75,8 +77,19 @@ class Game:
         self.p2 = p2
 
     def play_round(self):
+        global countp1
+        global countp2
         move1 = self.p1.move()
         move2 = self.p2.move()
+        print(f"You played {move1}\nOpponent played {move2}\n")
+        if move1 == move2:
+            print("It´s a tie\n")
+        elif self.p1.beats(move1, move2):
+            print("**Player one wins**\n")
+            countp1 += 1
+        elif self.p2.beats(move2, move1):
+            print("**Player 2 wins**\n")
+            countp2 += 1
         print(f"Player 1: {move1}  Player 2: {move2}")
         self.p1.learn(move1, move2)
         self.p2.learn(move2, move1)
