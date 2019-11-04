@@ -101,6 +101,13 @@ class Game:
             self.play_round()
         print("Game over!")
 
+        if countp1 > countp2:
+            print("Congrats Player one, you won!")
+        elif countp1 < countp2:
+            print("Congrats Player two, you won!")
+        else:
+            print("Congrats, It´s a tie!")
+
 
 if __name__ == '__main__':
     game = Game(Player(), Player())
