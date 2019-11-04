@@ -1,3 +1,5 @@
+import random
+
 moves = ['rock', 'paper', 'scissors']
 
 
