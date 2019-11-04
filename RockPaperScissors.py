@@ -23,6 +23,22 @@ class RockPlayer(Player):
         return moves[0]
 
 
+class CyclePlayer(Player):
+
+    def move(self):
+        if self.my_move is None:
+            return random.choice(moves)
+        if self.my_move == "rock":
+            return "paper"
+        elif self.my_move == "paper":
+            return "scissors"
+        else:
+            return "rock"
+
+    def learn(self, my_move, their_move):
+        self.my_move = my_move
+        
+
 class Game:
     def __init__(self, p1, p2):
         self.p1 = p1
