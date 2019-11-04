@@ -49,6 +49,13 @@ class ReflectPlayer(Player):
 
     def learn(self, my_move, their_move):
         self.their_move = their_move
+
+
+class RandomPlayer(Player):
+
+    def move(self):
+        move = random.choice(moves)
+        return move
                 
 
 class Game:
