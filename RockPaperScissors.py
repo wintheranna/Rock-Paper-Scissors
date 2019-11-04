@@ -17,6 +17,12 @@ class Player:
                 (one == 'paper' and two == 'rock'))
 
 
+class RockPlayer(Player):
+
+    def move(self):
+        return moves[0]
+
+
 class Game:
     def __init__(self, p1, p2):
         self.p1 = p1
