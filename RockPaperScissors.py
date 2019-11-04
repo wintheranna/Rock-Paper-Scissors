@@ -56,7 +56,18 @@ class RandomPlayer(Player):
     def move(self):
         move = random.choice(moves)
         return move
-                
+
+
+class HumanPlayer(Player):
+
+    def move(self):
+        while True:
+            humanMove = input("Rock, paper, scissors?").lower()
+            if humanMove in moves:
+                return humanMove
+            else:
+                print("Invalid input.Try again.")
+
 
 class Game:
     def __init__(self, p1, p2):
