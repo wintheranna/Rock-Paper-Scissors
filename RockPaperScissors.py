@@ -37,7 +37,19 @@ class CyclePlayer(Player):
 
     def learn(self, my_move, their_move):
         self.my_move = my_move
-        
+
+
+class ReflectPlayer(Player):
+
+    def move(self):
+        if self.their_move is None:
+            return random.choice(moves)
+        else:
+            return self.their_move
+
+    def learn(self, my_move, their_move):
+        self.their_move = their_move
+                
 
 class Game:
     def __init__(self, p1, p2):
